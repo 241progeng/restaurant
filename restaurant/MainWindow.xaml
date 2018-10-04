@@ -5,8 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:restaurant"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Check" Height="642.857" Width="1188.509">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+      <!--GDE??  <GridSplitter Grid.Column="1"  Grid.RowSpan="3" ShowsPreview="False" Height="7"
+        HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+        -->
+        <GridSplitter Grid.Column="0" Grid.RowSpan="3" ShowsPreview="False" Width="3"
+    HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+        <Canvas Grid.Column="0" Grid.RowSpan="3" Background="LightPink" >
+            <TextBlock>Заказанные Товары</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="1" Grid.Row="0" Background="Plum">
+            <TextBlock>товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="2" Grid.Row="0" Background="Salmon">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="3" Grid.Row="0" Background="LightSalmon">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="1" Grid.Row="1" Background="IndianRed">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="2" Grid.Row="1" Background="Violet">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="3" Grid.Row="1" Background="PaleVioletRed">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="4" Grid.Row="1" Background="pink">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="4" Grid.Row="0" Background="coral">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="1" Grid.Row="2" Background="DarkSalmon">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="2" Grid.Row="2" Background="LightCoral">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="3" Grid.Row="2" Background="plum">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+        <Canvas Grid.Column="4" Grid.Row="2" Background="darkSalmon">
+            <TextBlock>Товар</TextBlock>
+        </Canvas>
+         <Canvas Grid.Column="3" Grid.Row="3" Background="LightBlue" Grid.ColumnSpan="2">
+            <TextBlock Canvas.Top="10" FontWeight="Bold" FontFamily="Tahoma" FontSize="20" FontStretch="Expanded">Print</TextBlock>
+        </Canvas>
+        <Canvas Grid.ColumnSpan="3" Grid.Row="3" Background="#dfffff">
+            <TextBlock Canvas.Left="10" FontWeight="Bold" FontFamily="Tahoma" FontSize="20" FontStretch="Expanded">Total:</TextBlock>
+        </Canvas>
     </Grid>
+
 </Window>
