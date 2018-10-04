@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:restaurant"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid x:Name="grid1">
+        <Button x:Name="button1"  Width="200" Height="200" Content="PRIVET" Margin="459,112,133,107" />
+        <Button x:Name="button2"  Width="200" Height="200" Content="PRIVET" Margin="108,112,484,107" />
     </Grid>
 </Window>
