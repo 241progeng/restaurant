@@ -24,5 +24,15 @@ namespace restaurant
         {
             InitializeComponent();
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("print");
+        }
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("товар");
+        }
     }
 }
+    
+
