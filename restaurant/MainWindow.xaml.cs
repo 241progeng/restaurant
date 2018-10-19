@@ -4,11 +4,39 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Data.Entity;
-//dfwsadasdsa test stesrfdsfvbpdfalds
+
+//using System.Net.Mail;
+//using System.Text;
+//using System.Threading.Tasks;
+//using System.Collections.Generic;
+//using System.Net;
 
 namespace restaurant
 {
+    //class Message
+    //{
+    //    static void message(string[] args)
+    //    {
+    //        MailAddress fromMailAddress = new MailAddress("usualworker@gmail.com", "Работяга обычный");
+    //        MailAddress toAddress = new MailAddress("kirill.sing2000@gmail.com","Kirill Sing");
 
+    //        using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress ))
+    //        using (SmtpClient smtpClient = new SmtpClient())
+    //        {
+    //            mailMessage.Subject = "My Subject";
+    //            mailMessage.Body = "Text in the body";
+
+    //            smtpClient.Host = "smtp.gmail.com";
+    //            smtpClient.Port = 587;
+    //            smtpClient.EnableSsl = true;
+    //            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+    //            smtpClient.UseDefaultCredentials = false;
+    //            smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "q1w2e3r4zqxwecvr");
+
+    //            smtpClient.Send(mailMessage);
+    //        }
+    //    }
+    //}
     public partial class MainWindow : Window
     {
         ApplicationContext db;
@@ -43,7 +71,8 @@ namespace restaurant
             {
                 Id = client.Id,
                 Discount = client.Discount,
-                Name = client.Name
+                Name = client.Name,
+                Email=client.Email
             });
 
             if (clientWindow.ShowDialog() == true)
@@ -52,6 +81,7 @@ namespace restaurant
                 client = db.Clients.Find(clientWindow.Client.Id);
                 if (client != null)
                 {
+                    client.Email = clientWindow.Client.Email;
                     client.Discount = clientWindow.Client.Discount;
                     client.Name = clientWindow.Client.Name;
                     client.Id = clientWindow.Client.Id;
@@ -76,6 +106,7 @@ namespace restaurant
         private string name;
         private int discount;
         private int id;
+        private string email;
 
         public int Id { get; set; }
 
@@ -95,6 +126,15 @@ namespace restaurant
             {
                 discount = value;
                 OnPropertyChanged("Discount");
+            }
+        }
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                email = value;
+                OnPropertyChanged("E-mail");
             }
         }
 

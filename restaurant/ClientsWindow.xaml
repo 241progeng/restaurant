@@ -26,12 +26,12 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <TextBlock Text="Name" />
-        <TextBlock Text="Id" Grid.Row="1" />
-        <TextBlock Text="Discount" Grid.Row="2" />
+        <TextBlock Text="Discount" Grid.Row="1" Margin="8" />
+        <TextBlock Text="E-mail" Grid.Row="2" Margin="8" />
 
         <TextBox Text="{Binding Name}" Grid.Column="1" />
-        <TextBox Text="{Binding Id}" Grid.Column="1" Grid.Row="1" />
-        <TextBox Text="{Binding Discount}" Grid.Column="1" Grid.Row="2" />
+        <TextBox Text="{Binding Discount}" Grid.Column="1" Grid.Row="1" />
+        <TextBox Text="{Binding Email}" Grid.Column="1" Grid.Row="2" />
 
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
             <Button IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="5">OK</Button>

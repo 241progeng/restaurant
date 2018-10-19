@@ -18,6 +18,7 @@
                         <TextBlock Text="{Binding Name}" FontSize="16" />
                         <TextBlock Text="{Binding Id}" FontSize="12" />
                         <TextBlock Text="{Binding Discount}" FontSize="13" />
+                        <TextBlock Text="{Binding Email}" FontSize="13" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
