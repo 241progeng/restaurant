@@ -5,77 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:restaurant"
         mc:Ignorable="d"
-        Title="Check" Height="642.857" Width="1188.509">
+        Title="MainWindow" Height="300" Width="425">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" ></ColumnDefinition>
-            <ColumnDefinition Width="*" ></ColumnDefinition>
-            <ColumnDefinition  Width="*" ></ColumnDefinition>
-            <ColumnDefinition Width="*" ></ColumnDefinition>
-            <ColumnDefinition  Width="*" ></ColumnDefinition>
-
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="153*" ></RowDefinition>
-            <RowDefinition Height="153*" ></RowDefinition>
-            <RowDefinition Height="200*" ></RowDefinition>
-            <RowDefinition Height="0*" ></RowDefinition>
-            <RowDefinition Height="107*"/>
+            <RowDefinition />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <!--GDE??-->
-
-        <Canvas Grid.Column="0" Grid.RowSpan="3" Background="LightPink" >
-            <TextBlock>Заказанные Товары</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="1" Grid.Row="0" Background="Plum">
-            <Button x:Name="button2" Width="236" Height="153" Background="Plum" Content="Товар" FontFamily="Tahoma" FontSize="15" Click="Button_Click1" />
-            <!-- <TextBlock>товар</TextBlock>-->
-        </Canvas>
-        <Canvas Grid.Column="2" Grid.Row="0" Background="Salmon">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="3" Grid.Row="0" Background="LightSalmon">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="1" Grid.Row="1" Background="IndianRed">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="2" Grid.Row="1" Background="Violet">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="3" Grid.Row="1" Background="PaleVioletRed">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="4" Grid.Row="1" Background="pink">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="4" Grid.Row="0" Background="coral">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="1" Grid.Row="2" Background="DarkSalmon">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="2" Grid.Row="2" Background="LightCoral">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="3" Grid.Row="2" Background="plum">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="4" Grid.Row="2" Background="darkSalmon">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="3" Grid.Row="3" Background="LightBlue" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Button x:Name="button1" Width="473" Height="107" Background="LightBlue" Content="Print" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Click="Button_Click" />
-            <!-- <TextBlock Canvas.Top="10" FontWeight="Bold" FontFamily="Tahoma" FontSize="20" FontStretch="Expanded">Print</TextBlock> -->
-        </Canvas>
-        <Canvas Grid.ColumnSpan="3" Grid.Row="3" Background="#dfffff" Grid.RowSpan="2">
-            <TextBlock Canvas.Left="10" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" FontStretch="Expanded">Total:</TextBlock>
-        </Canvas>
-        <GridSplitter Grid.RowSpan="3" ShowsPreview="False" Width="5"
-        HorizontalAlignment="Center"  VerticalAlignment="Stretch" Background="Red" Margin="231,0,0,0"  />
-
-
+        <ListBox x:Name="clientsList" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontSize="16" />
+                        <TextBlock Text="{Binding Id}" FontSize="12" />
+                        <TextBlock Text="{Binding Discount}" FontSize="13" />
+                        <TextBlock Text="{Binding Email}" FontSize="13" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Добавить" Margin="10" Click="Add_Click" />
+            <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
+            <Button Content="Удалить" Margin="10" Click="Delete_Click"  />
+        </StackPanel>
     </Grid>
-
 </Window>
