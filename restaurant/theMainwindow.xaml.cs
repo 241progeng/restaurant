@@ -32,7 +32,11 @@ namespace restaurant
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
-
+        private void Add_Click3(object sender, RoutedEventArgs e)
+        {
+            About_us about_us = new About_us();
+            about_us.Show();
+        }
     }
 
 }

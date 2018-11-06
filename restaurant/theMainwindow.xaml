@@ -11,7 +11,7 @@
         <Menu Height="25" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="Wheat" >
             <MenuItem Header="For Client" Height="25" Click="Add_Click" ></MenuItem>
             <MenuItem Header="For Administration" Click="Add_Click2" ></MenuItem>
-            <MenuItem Header="About us" ></MenuItem>
+            <MenuItem Header="About us" Click="Add_Click3" ></MenuItem>
         </Menu>
         <Image Source="Resources/laba.png"  Width="300" Height="250" Margin="54,49,38,20" />
 

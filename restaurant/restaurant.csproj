@@ -76,6 +76,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="About_us.xaml.cs">
+      <DependentUpon>About_us.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnterClient.xaml.cs">
+      <DependentUpon>EnterClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shoptable.xaml.cs">
       <DependentUpon>Shoptable.xaml</DependentUpon>
     </Compile>
@@ -85,9 +91,17 @@
     <Compile Include="theMainwindow.xaml.cs">
       <DependentUpon>theMainwindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="About_us.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ClientsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EnterClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -149,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\laba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\photo_2018-10-25_11-12-29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />

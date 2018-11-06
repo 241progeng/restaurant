@@ -21,40 +21,52 @@
             <RowDefinition Height="170*" ></RowDefinition>
             <RowDefinition Height="170*" ></RowDefinition>
             <RowDefinition Height="100*"/>
+
         </Grid.RowDefinitions>
 
+        <ListBox x:Name="productList" ItemsSource="{Binding}" Grid.Column="0" Grid.RowSpan="3" Background="LightPink">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding name}" FontSize="16"   />
+                        <TextBlock Text="{Binding Id}" FontSize="12"  />
+                        <TextBlock Text="{Binding counts}" FontSize="13"  />
+                        <TextBlock Text="{Binding price}" FontSize="13"  />
 
-        <Canvas Grid.Column="0" Grid.RowSpan="3" Background="LightPink" >
-            <TextBlock></TextBlock>
-        </Canvas>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
-        <Button Grid.Column="1" Grid.Row="0" x:Name="Button1" Background="Plum" Content="Black Tea" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="Button_Click1" />
+        <Button Grid.Column="2" Grid.Row="3" x:Name="Discount" Background="Wheat" Content="Discount" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="Button_Click13" />
 
-        <Button Grid.Column="2" Grid.Row="0" x:Name="Button2" Background="Salmon" Content="Green Tea" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click2" />
+        <Button Grid.Column="1" Grid.Row="0" x:Name="Black_Tea" Background="Plum" Content="Black Tea" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="Button_Click1" />
 
-        <Button Grid.Column="3" Grid.Row="0" x:Name="Button3" Background="LightSalmon" Content="Espresso" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click3" />
+        <Button Grid.Column="2" Grid.Row="0" x:Name="Green_Tea" Background="Salmon" Content="Green Tea" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click2" />
 
-        <Button Grid.Column="4" Grid.Row="0" x:Name="Button4" Background="coral" Content="Latte" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click4" />
+        <Button Grid.Column="3" Grid.Row="0" x:Name="Espresso" Background="LightSalmon" Content="Espresso" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click3" />
 
-        <Button Grid.Column="1" Grid.Row="1" x:Name="Button5" Background="IndianRed" Content="Donut" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click5" />
+        <Button Grid.Column="4" Grid.Row="0" x:Name="Latte" Background="coral" Content="Latte" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click4" />
 
-        <Button Grid.Column="2" Grid.Row="1"  x:Name="Button6" Background="Violet" Content="Croissant " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click5" />
+        <Button Grid.Column="1" Grid.Row="1" x:Name="Donut" Background="IndianRed" Content="Donut" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click5" />
 
-        <Button Grid.Column="3" Grid.Row="1" x:Name="Button7" Background="PaleVioletRed" Content="Swissroll " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click6" />
+        <Button Grid.Column="2" Grid.Row="1"  x:Name="Croissant" Background="Violet" Content="Croissant" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click5" />
 
-        <Button Grid.Column="4" Grid.Row="1" x:Name="Button8" Background="pink" Content="Apple Pie" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click7" />
+        <Button Grid.Column="3" Grid.Row="1" x:Name="Swissroll" Background="PaleVioletRed" Content="Swissroll" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click6" />
 
-        <Button Grid.Column="1" Grid.Row="2" x:Name="Button9" Background="DarkSalmon" Content="Cheesecake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click8" />
+        <Button Grid.Column="4" Grid.Row="1" x:Name="Apple_Pie" Background="pink" Content="Apple Pie" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click7" />
 
-        <Button Grid.Column="2" Grid.Row="2" x:Name="Button10" Background="LightCoral" Content="Brownie " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click9" />
+        <Button Grid.Column="1" Grid.Row="2" x:Name="Cheesecake" Background="DarkSalmon" Content="Cheesecake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click8" />
 
-        <Button Grid.Column="3" Grid.Row="2" x:Name="Button11" Background="plum" Content="Cupcake " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click10" />
+        <Button Grid.Column="2" Grid.Row="2" x:Name="Brownie" Background="LightCoral" Content="Brownie" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click9" />
 
-        <Button Grid.Column="4" Grid.Row="2" x:Name="Button12" Background="darkSalmon" Content="Pancake " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click11" />
+        <Button Grid.Column="3" Grid.Row="2" x:Name="Cupcake" Background="plum" Content="Cupcake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click10" />
+
+        <Button Grid.Column="4" Grid.Row="2" x:Name="Pancake" Background="darkSalmon" Content="Pancake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click11" />
 
         <Button Grid.Column="3" Grid.Row="3"  Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="PrintButton" Width="417" Height="95" Background="LightBlue" Content="Print" FontWeight="Bold" FontStyle="Italic" FontFamily="SimHei" FontSize="40" Click="PrintButton_Click" />
 
-        <Canvas Grid.ColumnSpan="3" Grid.Row="3" Background="#dfffff" Grid.RowSpan="2">
+        <Canvas Grid.ColumnSpan="2" Grid.Row="3" Background="#dfffff" Grid.RowSpan="2">
             <TextBlock Canvas.Left="10" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded">Total:</TextBlock>
         </Canvas>
 

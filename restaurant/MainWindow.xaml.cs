@@ -107,6 +107,7 @@ namespace restaurant
         private int discount;
         private int id;
         private string email;
+        private string password;
 
         public int Id { get; set; }
 
@@ -126,6 +127,15 @@ namespace restaurant
             {
                 discount = value;
                 OnPropertyChanged("Discount");
+            }
+        }
+        public string Password
+        {
+            get { return password; }
+            set
+            {
+                password = value;
+                OnPropertyChanged("Password");
             }
         }
         public string Email

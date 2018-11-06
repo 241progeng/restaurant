@@ -27,6 +27,7 @@ namespace restaurant
         {
             {
                 MessageBox.Show("Действие выполнено accept");
+                this.Close();
             }
 
         }
@@ -34,7 +35,6 @@ namespace restaurant
         private void escButton_Click(object sender, RoutedEventArgs e)
         {
             {
-                MessageBox.Show("Действие выполнено esc");
                 this.Close(); // закрытие окна
             }
         }
