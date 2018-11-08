@@ -8,68 +8,18 @@ using System.Data.Entity;
 
 namespace restaurant
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class Shoptablebuttoms : Window { }
     public partial class Shoptable : Window
     {
-        //private string name;
-        //private double price;
-        //private int counts;
-
-        //public int Id { get; set; }
-
+        ProductContext db_prod;
         public Shoptable()
         {   
             InitializeComponent();
 
+            db_prod = new ProductContext();
+            db_prod.Products.Load();
+            this.DataContext = db_prod.Products.Local.ToBindingList();
         }
-
-        //public class Product : INotifyPropertyChanged
-        //{
-        //    private string name;
-        //    private double price;
-        //    private int counts;
-
-        //    public int id_p { get; set; }
-
-        //    public string Name
-        //    {
-        //        get { return name; }
-        //        set
-        //        {
-        //            name = value;
-        //            OnPropertyChanged("Name");
-        //        }
-        //    }
-        //    public double Price
-        //    {
-        //        get { return price; }
-        //        set
-        //        {
-        //            price = value;
-        //            OnPropertyChanged("Price");
-        //        }
-        //    }
-        //    public int Counts
-        //    {
-        //        get { return counts; }
-        //        set
-        //        {
-        //            counts = value;
-        //            OnPropertyChanged("Counts");
-        //        }
-        //    }
-
-        //    public event PropertyChangedEventHandler PropertyChanged;
-        //    public void OnPropertyChanged([CallerMemberName]string prop = "")
-        //    {
-        //        if (PropertyChanged != null)
-        //            PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        //    }
-        //}
-
         private void PrintButton_Click(object sender, RoutedEventArgs e)
         {
             //MessageBox.Show("print");
@@ -86,12 +36,12 @@ namespace restaurant
             //Product product = productList.SelectedItem as Product;
 
             //if (product.id_p == 1)
-            //    {
-            //    Id = product.id_p;
+            //{
+            //    id_p = product.id_p;
             //    price = product.Price;
-            //    name = product.Name;
+            //    Name = product.Name;
             //    counts = product.Counts;
-            //    }
+            //}
         }
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
@@ -133,6 +83,57 @@ namespace restaurant
         private void Button_Click12(object sender, RoutedEventArgs e)
         {
         }
+
+    }
+    public class Product : INotifyPropertyChanged
+    {
+        private string name;
+        private double price;
+        private int counts;
+
+        public int id_p { get; set; }
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+        public double Price
+        {
+            get { return price; }
+            set
+            {
+                price = value;
+                OnPropertyChanged("Price");
+            }
+        }
+        public int Counts
+        {
+            get { return counts; }
+            set
+            {
+                counts = value;
+                OnPropertyChanged("Counts");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
+    }
+    public class ProductContext : DbContext
+    {
+        public ProductContext() : base("DefaultConnection")
+        {
+        }
+        public DbSet<Product> Products { get; set; }
     }
 }
 

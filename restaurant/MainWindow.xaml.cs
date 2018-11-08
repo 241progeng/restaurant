@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System;
 //Added for database
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
