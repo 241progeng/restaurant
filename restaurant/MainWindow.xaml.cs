@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-
+using System;
 //Added for database
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -63,16 +63,17 @@ namespace restaurant
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             // если ни одного объекта не выделено, выходим
-            if (clientsList.SelectedItem == null) return;
+            if (ClientsList.SelectedItem == null) return;
             // получаем выделенный объект
-            Client client = clientsList.SelectedItem as Client;
+            Client client = ClientsList.SelectedItem as Client;
 
             ClientsWindow clientWindow = new ClientsWindow(new Client
             {
                 Id = client.Id,
                 Discount = client.Discount,
                 Name = client.Name,
-                Email=client.Email
+                Email=client.Email,
+                Password=client.Password
             });
 
             if (clientWindow.ShowDialog() == true)
@@ -94,9 +95,9 @@ namespace restaurant
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             // если ни одного объекта не выделено, выходим
-            if (clientsList.SelectedItem == null) return;
+            if (ClientsList.SelectedItem == null) return;
             // получаем выделенный объект
-            Client client = clientsList.SelectedItem as Client;
+            Client client = ClientsList.SelectedItem as Client;
             db.Clients.Remove(client);
             db.SaveChanges();
         }

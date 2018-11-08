@@ -14,7 +14,7 @@ using System.Data.Entity;
 
 namespace restaurant
 {
-    
+
     public partial class EnterClient : Window
     {
         ApplicationContext db;
@@ -41,20 +41,20 @@ namespace restaurant
 
             var clients = (from c in db.Clients where c.Email == em select c).ToList();
 
-            if (clients.Count()==0)
+            if (clients.Count() == 0)
             {
                 MessageBox.Show("Error");
-            
+
             }
             else
             {
-                if (pw==clients.FirstOrDefault<Client>().Password)
+                if (pw == clients.FirstOrDefault<Client>().Password)
                 {
-                    MessageBox.Show(Discount);
+                    MessageBox.Show("Discount");
                 }
             }
 
         }
     }
-}
 
+}
