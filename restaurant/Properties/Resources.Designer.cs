@@ -63,9 +63,19 @@ namespace restaurant.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap About {
+        internal static System.Drawing.Bitmap laba {
             get {
-                object obj = ResourceManager.GetObject("About", resourceCulture);
+                object obj = ResourceManager.GetObject("laba", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_2018_10_25_11_12_29 {
+            get {
+                object obj = ResourceManager.GetObject("photo_2018_10_25_11_12_29", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
