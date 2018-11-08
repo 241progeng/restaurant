@@ -5,77 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:restaurant"
         mc:Ignorable="d"
-        Title="Check" Height="642.857" Width="1188.509">
-    <Grid>
+        Title="Order"  Height="610" Width="1204" >
+    <Grid >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" ></ColumnDefinition>
-            <ColumnDefinition Width="*" ></ColumnDefinition>
-            <ColumnDefinition  Width="*" ></ColumnDefinition>
-            <ColumnDefinition Width="*" ></ColumnDefinition>
-            <ColumnDefinition  Width="*" ></ColumnDefinition>
+            <ColumnDefinition Width="364*" ></ColumnDefinition>
+            <ColumnDefinition Width="210*" ></ColumnDefinition>
+            <ColumnDefinition Width="210*"/>
+            <ColumnDefinition Width="210*" ></ColumnDefinition>
+            <ColumnDefinition  Width="210*" ></ColumnDefinition>
 
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="153*" ></RowDefinition>
-            <RowDefinition Height="153*" ></RowDefinition>
-            <RowDefinition Height="200*" ></RowDefinition>
-            <RowDefinition Height="0*" ></RowDefinition>
-            <RowDefinition Height="107*"/>
+            <RowDefinition Height="170*" ></RowDefinition>
+            <RowDefinition Height="170*" ></RowDefinition>
+            <RowDefinition Height="170*" ></RowDefinition>
+            <RowDefinition Height="100*"/>
         </Grid.RowDefinitions>
-        <!--GDE??-->
+
 
         <Canvas Grid.Column="0" Grid.RowSpan="3" Background="LightPink" >
-            <TextBlock>Заказанные Товары</TextBlock>
+            <TextBlock FontSize="30" FontFamily="Rod" Canvas.Left="72" >Your order:</TextBlock>
         </Canvas>
-        <Canvas Grid.Column="1" Grid.Row="0" Background="Plum">
-            <Button x:Name="button2" Width="236" Height="153" Background="Plum" Content="Товар" FontFamily="Tahoma" FontSize="15" Click="Button_Click1" />
-            <!-- <TextBlock>товар</TextBlock>-->
-        </Canvas>
-        <Canvas Grid.Column="2" Grid.Row="0" Background="Salmon">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="3" Grid.Row="0" Background="LightSalmon">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="1" Grid.Row="1" Background="IndianRed">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="2" Grid.Row="1" Background="Violet">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="3" Grid.Row="1" Background="PaleVioletRed">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="4" Grid.Row="1" Background="pink">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="4" Grid.Row="0" Background="coral">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="1" Grid.Row="2" Background="DarkSalmon">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="2" Grid.Row="2" Background="LightCoral">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="3" Grid.Row="2" Background="plum">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="4" Grid.Row="2" Background="darkSalmon">
-            <TextBlock>Товар</TextBlock>
-        </Canvas>
-        <Canvas Grid.Column="3" Grid.Row="3" Background="LightBlue" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Button x:Name="button1" Width="473" Height="107" Background="LightBlue" Content="Print" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" Click="Button_Click" />
-            <!-- <TextBlock Canvas.Top="10" FontWeight="Bold" FontFamily="Tahoma" FontSize="20" FontStretch="Expanded">Print</TextBlock> -->
-        </Canvas>
-        <Canvas Grid.ColumnSpan="3" Grid.Row="3" Background="#dfffff" Grid.RowSpan="2">
-            <TextBlock Canvas.Left="10" FontWeight="Bold" FontFamily="Tahoma" FontSize="30" FontStretch="Expanded">Total:</TextBlock>
-        </Canvas>
-        <GridSplitter Grid.RowSpan="3" ShowsPreview="False" Width="5"
-        HorizontalAlignment="Center"  VerticalAlignment="Stretch" Background="Red" Margin="231,0,0,0"  />
 
+        <Button Grid.Column="1" Grid.Row="0" x:Name="Button1" Background="Plum" Content="Black Tea" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="Button_Click1" />
+
+        <Button Grid.Column="2" Grid.Row="0" x:Name="Button2" Background="Salmon" Content="Green Tea" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click2" />
+
+        <Button Grid.Column="3" Grid.Row="0" x:Name="Button3" Background="LightSalmon" Content="Espresso" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click3" />
+
+        <Button Grid.Column="4" Grid.Row="0" x:Name="Button4" Background="coral" Content="Latte" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click4" />
+
+        <Button Grid.Column="1" Grid.Row="1" x:Name="Button5" Background="IndianRed" Content="Donut" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click5" />
+
+        <Button Grid.Column="2" Grid.Row="1"  x:Name="Button6" Background="Violet" Content="Croissant " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click5" />
+
+        <Button Grid.Column="3" Grid.Row="1" x:Name="Button7" Background="PaleVioletRed" Content="Swissroll " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click6" />
+
+        <Button Grid.Column="4" Grid.Row="1" x:Name="Button8" Background="pink" Content="Apple Pie" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click7" />
+
+        <Button Grid.Column="1" Grid.Row="2" x:Name="Button9" Background="DarkSalmon" Content="Cheesecake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click8" />
+
+        <Button Grid.Column="2" Grid.Row="2" x:Name="Button10" Background="LightCoral" Content="Brownie " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click9" />
+
+        <Button Grid.Column="3" Grid.Row="2" x:Name="Button11" Background="plum" Content="Cupcake " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click10" />
+
+        <Button Grid.Column="4" Grid.Row="2" x:Name="Button12" Background="darkSalmon" Content="Pancake " FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click11" />
+
+        <Button Grid.Column="3" Grid.Row="3"  Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="PrintButton" Width="417" Height="95" Background="LightBlue" Content="Print" FontWeight="Bold" FontStyle="Italic" FontFamily="SimHei" FontSize="40" Click="PrintButton_Click" />
+
+        <Canvas Grid.ColumnSpan="3" Grid.Row="3" Background="#dfffff" Grid.RowSpan="2">
+            <TextBlock Canvas.Left="10" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded">Total:</TextBlock>
+        </Canvas>
 
     </Grid>
-
+    
 </Window>
+    
+
+        
