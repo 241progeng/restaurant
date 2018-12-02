@@ -4,11 +4,18 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
+using System.Diagnostics;
+
+using System.Linq;
+using System.Data.SQLite;
+using System;
+using System.Windows.Data;
 
 namespace restaurant
-{
-    public partial class Shoptablebuttoms : Window { }
+{    public partial class Shoptablebuttoms : Window { }
     public partial class Shoptable : Window
     {
         ProductContext db_prod;
@@ -18,11 +25,10 @@ namespace restaurant
 
             db_prod = new ProductContext();
             db_prod.Products.Load();
-            this.DataContext = db_prod.Products.Local.ToBindingList();
+
         }
         private void PrintButton_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("print");
             Shoptablebuttoms shoptablebuttoms  = new Shoptablebuttoms();
             shoptablebuttoms.Show();
         }
@@ -33,15 +39,42 @@ namespace restaurant
         }
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            //Product product = productList.SelectedItem as Product;
+            string name="Black_Tea";
+            //int products = (from pr in db_prod.Products where pr.Name == name select pr).Count();
 
-            //if (product.id_p == 1)
+            //if (products > 0)
             //{
-            //    id_p = product.id_p;
-            //    price = product.Price;
-            //    Name = product.Name;
-            //    counts = product.Counts;
-            //}
+            //    List<Product> list = (from pr in db_prod.Products where pr.Name == name select pr).ToList();
+            //    foreach (var l in list)
+            //    {
+            //        l.Counts--;
+            //    }
+
+            //уменьшение кол-ва на 1 в базе
+
+            //Debug.WriteLine(list.Count());
+            //int c = (from cnt in db_prod.Products where cnt.Name == name select cnt.Counts);
+
+
+            int ID = 1;
+                     
+            var c = db_prod.Products.Find(ID);
+
+
+            Debug.WriteLine(c.Counts);
+            if (c.Counts > 0)
+            {
+                List<Product> list = (from pr in db_prod.Products where pr.Name == name select pr).ToList();
+                c.Counts--;
+                // DataContext = list;
+                // db_prod.SaveChanges();
+                Debug.WriteLine(c.Counts);
+            }
+            else
+            {
+                    MessageBox.Show("This product is absent");
+            }
+
         }
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
@@ -91,6 +124,7 @@ namespace restaurant
         private double price;
         private int counts;
 
+        [Key]
         public int id_p { get; set; }
 
         public string Name
@@ -135,6 +169,7 @@ namespace restaurant
         }
         public DbSet<Product> Products { get; set; }
     }
+
 }
 
 

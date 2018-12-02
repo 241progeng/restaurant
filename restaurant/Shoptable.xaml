@@ -28,11 +28,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding name}" FontSize="16"   />
-                        <TextBlock Text="{Binding id_p}" FontSize="12"  />
-                        <TextBlock Text="{Binding counts}" FontSize="13"  />
-                        <TextBlock Text="{Binding price}" FontSize="13"  />
-
+                        <TextBlock Text="{Binding Name}" FontSize="15"/>
+                        <TextBlock Text="{Binding Price}" FontSize="13"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -67,7 +64,7 @@
         <Button Grid.Column="3" Grid.Row="3"  Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="PrintButton" Width="417" Height="95" Background="LightBlue" Content="Print" FontWeight="Bold" FontStyle="Italic" FontFamily="SimHei" FontSize="40" Click="PrintButton_Click" />
 
         <Canvas Grid.ColumnSpan="2" Grid.Row="3" Background="#dfffff" Grid.RowSpan="2">
-            <TextBlock Canvas.Left="10" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded">Total:</TextBlock>
+            <TextBlock Canvas.Left="10" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded"></TextBlock>
         </Canvas>
 
     </Grid>
