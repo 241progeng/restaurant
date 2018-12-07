@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:restaurant"
         mc:Ignorable="d"
-        Title="EnterClient" Height="450" Width="800">
+        Title="EnterClient" Height="382.979" Width="835.106"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="8" />
@@ -14,7 +15,7 @@
             <Setter Property="Margin" Value="8" />
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Background="MediumPurple">
         <Grid.RowDefinitions>
             <RowDefinition Height="105*" />
             <RowDefinition Height="105*" />
@@ -24,14 +25,14 @@
             <ColumnDefinition Width="100" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Client's e-mail" />
-        <TextBlock Text="Password" Grid.Row="1" Margin="8" />
+        <TextBlock Text="Client's e-mail" FontWeight="Bold" />
+        <TextBlock Text="Password" Grid.Row="1" Margin="8" FontWeight="Bold" />
 
         <TextBox Name="EmailBox" Grid.Column="1" />
-        <PasswordBox Name="PasswordBox" Grid.Column="1" Grid.Row="1" />
+        <PasswordBox Name="PasswordBox" Grid.Column="1" Grid.Row="1" Margin="8,0" />
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Margin="276,0">
-            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="5">OK</Button>
-            <Button IsCancel="True" Click="Cancel_Click"  MinWidth="60" Margin="5">Отмена</Button>
-        </StackPanel>
+            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="5" FontWeight="Bold" Background="Wheat" Content="OK"/>
+            <Button IsCancel="True" Click="Cancel_Click" MinWidth="60" Margin="5" FontWeight="Bold" Background="Wheat" Content="Отмена"/>
+        </StackPanel> 
     </Grid>
 </Window>

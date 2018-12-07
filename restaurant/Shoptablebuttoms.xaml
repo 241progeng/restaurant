@@ -6,53 +6,16 @@
         xmlns:local="clr-namespace:restaurant"
         mc:Ignorable="d"
         Title="Your bill is" ResizeMode="NoResize"  Height="300" Width="600">
-    <Grid> 
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="PapayaWhip" Offset="0.0"></GradientStop>
-                <GradientStop Color="Plum" Offset="0.6"></GradientStop>
-                <GradientStop Color="Orchid" Offset="0.98"></GradientStop>
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid>
+        <Button x:Name="Cancel" Background="Wheat" Content="Cancel" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="escButton_Click" Margin="35,224,394,10" RenderTransformOrigin="2.576,0.275"/>
+        <Button x:Name="Ok"  Background="Wheat" Content="Print" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="acceptButton_Click" Margin="378,224,51,10" RenderTransformOrigin="2.576,0.275"/>
+        <DataGrid x:Name="billGrid" AutoGenerateColumns="False" HorizontalGridLinesBrush="DarkGray"
+    RowBackground="LightGray" AlternatingRowBackground="White" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,0,0,61">
 
-        <TextBlock FontSize="40" Text="Your bill is: " TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Tahoma" Margin="196,0,159,207" Width="237">
-            <TextBlock.Foreground>
-                <LinearGradientBrush>
-                    <GradientStop Color="Yellow" Offset="0.0" />
-                    <GradientStop Color="Red" Offset="0.25" />
-                    <GradientStop Color="Blue" Offset="0.75" />
-                    <GradientStop Color="LimeGreen" Offset="1.0" />
-                </LinearGradientBrush>
-            </TextBlock.Foreground>
-        </TextBlock>
-        <!--<TextBlock  FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded">Your bill is:</TextBlock>
-        <Button x:Name="acceptButton" Content="ОК" IsDefault="True" Click="acceptButton_Click" Margin="387,178,65,32" Background="Pink"/>
-        <Button x:Name="escButton" Content="Cancel" IsCancel="True" Click="escButton_Click" Margin="65,178,386,32" Background="Pink" />-->
-
-
-        <Button Width="110" Height="110" Content="OK" FontSize="25" FontWeight="DemiBold" Margin="402,123,80,36" x:Name="acceptButton" IsDefault="True" Click="acceptButton_Click" >
-            <Button.Template>
-                <ControlTemplate  TargetType="Button">
-                    <Grid>
-                        <Ellipse Fill="Pink" Width="90" Height="90"></Ellipse>
-                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center"
-                               VerticalAlignment="Center"></Label>
-                    </Grid>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-        <Button Width="110" Height="110" Content="Cancel" FontSize="25" FontWeight="DemiBold" Margin="74,123,408,36" x:Name="escButton" IsCancel="True" Click="escButton_Click" >
-            <Button.Template>
-                <ControlTemplate  TargetType="Button">
-                    <Grid>
-                        <Ellipse Fill="Pink" Width="90" Height="90"  ></Ellipse>
-                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center"
-                               VerticalAlignment="Center"></Label>
-                    </Grid>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" Width="90" />
+                <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}" Width="50" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

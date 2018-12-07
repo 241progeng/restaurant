@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:restaurant"
         mc:Ignorable="d"
-        Title="About us" Height="460.933" Width="368.823">
+        Title="About us" Height="460.933" Width="368.823" ResizeMode="NoResize">
     <Grid Margin="0,0,64,39">
         <Grid.RowDefinitions>
             <RowDefinition/>

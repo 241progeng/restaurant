@@ -64,7 +64,8 @@
         <Button Grid.Column="3" Grid.Row="3"  Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="PrintButton" Width="417" Height="95" Background="LightBlue" Content="Print" FontWeight="Bold" FontStyle="Italic" FontFamily="SimHei" FontSize="40" Click="PrintButton_Click" />
 
         <Canvas Grid.ColumnSpan="2" Grid.Row="3" Background="#dfffff" Grid.RowSpan="2">
-            <TextBlock Canvas.Left="10" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded"></TextBlock>
+            <TextBlock Text="Sum:" Canvas.Left="10" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="112" Canvas.Top="31"></TextBlock>
+            <TextBlock x:Name="TextBlock" Text="{Binding Sum.sum, Mode=OneWay,TargetNullValue=0 , UpdateSourceTrigger=PropertyChanged}" Canvas.Left="127" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="220" Canvas.Top="31"></TextBlock>
         </Canvas>
 
     </Grid>
