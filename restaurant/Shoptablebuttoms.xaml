@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:restaurant"
         mc:Ignorable="d"
-        Title="Your bill is" ResizeMode="NoResize"  Height="372" Width="600">
+        Title="Your bill is" ResizeMode="NoResize"  Height="372" Width="600"
+         WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="Cancel" Background="Wheat" Content="Cancel" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="escButton_Click" Margin="35,224,394,10" RenderTransformOrigin="2.576,0.275"/>
         <Button x:Name="Ok"  Background="Wheat" Content="Print" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="acceptButton_Click" Margin="378,224,51,10" RenderTransformOrigin="2.576,0.275"/>
