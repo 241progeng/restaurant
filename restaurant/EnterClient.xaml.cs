@@ -1,16 +1,14 @@
 ﻿using System.Linq;
 using System.Windows;
 using System.Data.Entity;
+using System.Windows.Controls;
+using System.Collections.Generic;
 
 namespace restaurant
 {
-
     public partial class EnterClient : Window
     {
         ApplicationContext db;
-
-        public string Discount { get; private set; }
-
         public EnterClient()
         {
             InitializeComponent();
@@ -27,9 +25,11 @@ namespace restaurant
         {
             string em = EmailBox.Text;
             string pw = PasswordBox.Password;
+            dynamic d;
 
             var clients = (from c in db.Clients where c.Email == em select c).ToList();
 
+            var disc = db.Clients.Find(pw);
             if (clients.Count() == 0)
             {
                 MessageBox.Show("Error");
@@ -39,10 +39,12 @@ namespace restaurant
             {
                 if (pw == clients.FirstOrDefault<Client>().Password)
                 {
-                    MessageBox.Show("Discount");
+                    d = (Sum.sum * disc.Discount) / 100;
+                    Sum.sum -= d;
+                    Sum.sum.ToString();
+                    Close();
                 }
             }
-
         }
     }
 

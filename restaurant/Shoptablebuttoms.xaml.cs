@@ -7,9 +7,6 @@ using System.Linq;
 
 namespace restaurant
 {
-    /// <summary>
-    /// Логика взаимодействия для Window1.xaml
-    /// </summary>
     public partial class Shoptablebuttoms : Window
     {
         BillContext db_bill;
@@ -26,12 +23,10 @@ namespace restaurant
                 MessageBox.Show("Действие выполнено accept");
                 var query = (from d in db_bill.Bills select d).ToList();
                 db_bill.Bills.RemoveRange(query);
-                db_bill.SaveChanges();
+                db_bill.SaveChanges(); 
                 this.Close();
             }
-
         }
-
         private void escButton_Click(object sender, RoutedEventArgs e)
         {
             {
@@ -41,7 +36,6 @@ namespace restaurant
                 this.Close();
             }
         }
-
     }
 
 

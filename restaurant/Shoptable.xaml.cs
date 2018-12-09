@@ -15,25 +15,6 @@ using System.Windows.Controls;
 
 namespace restaurant
 {
-    //public class Calculator : INotifyPropertyChanged
-    //{
-    //    private dynamic summ;
-    //    public dynamic Summ
-    //    {
-    //        get { return summ; }
-    //        set
-    //        {
-    //            summ = value;
-    //            OnPropertyChanged("Summ");
-    //        }
-    //    }
-    //    public event PropertyChangedEventHandler PropertyChanged;
-    //    public void OnPropertyChanged([CallerMemberName]string prop = "")
-    //    {
-    //        if (PropertyChanged != null)
-    //            PropertyChanged(this, new PropertyChangedEventArgs(prop));
-    //    }
-    //}
     public static class Sum
     {
         public static double sum;
@@ -44,7 +25,6 @@ namespace restaurant
         ProductContext db_prod;
         BillContext db_bill;
         public Bill Bill { get; private set; }
-        //public Calculator Calculator { get; private set; }
         public Shoptable()
         {   
             InitializeComponent();
@@ -54,19 +34,30 @@ namespace restaurant
             db_bill = new BillContext();
             db_bill.Bills.Load();
             this.DataContext = db_bill.Bills.Local.ToBindingList();
-            //TextBlock.Text = Calculator.Summ;
             TextBlock.Text = Sum.sum.ToString();
+        }
+        private void Del_Target(object sender, RoutedEventArgs e)
+        {
+            if (productList.SelectedItem == null) return;
+            // получаем выделенный объект
+            Bill bill = productList.SelectedItem as Bill;
+            db_bill.Bills.Remove(bill);
+            Sum.sum -= bill.Price;
+            TextBlock.Text = Sum.sum.ToString();
+            db_bill.SaveChanges();
         }
         private void PrintButton_Click(object sender, RoutedEventArgs e)
         {
             Shoptablebuttoms shoptablebuttoms  = new Shoptablebuttoms();
             shoptablebuttoms.Show();
             Sum.sum = 0;
+            this.Close();
         }
-        private void Button_Click13(object sender, RoutedEventArgs e)
+        private void Discount_(object sender, RoutedEventArgs e)
         {
             EnterClient enterClient = new EnterClient();
             enterClient.Show();
+            TextBlock.Text = Sum.sum.ToString();
         }
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
@@ -80,7 +71,6 @@ namespace restaurant
                 c.Counts--;
                 Bill bill = new Bill { Name = c.Name, Price = c.Price, Count=1};
                 db_bill.Bills.Add(bill);
-                //Calculator.Summ += c.Price;
                 Sum.sum += c.Price;
                 TextBlock.Text = Sum.sum.ToString();
                 db_bill.SaveChanges();
@@ -432,5 +422,4 @@ namespace restaurant
         }
         public DbSet<Product> Products { get; set; }
     }
-
 }

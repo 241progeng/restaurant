@@ -3,6 +3,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 //using System.Net.Mail;
 //using System.Text;
@@ -129,6 +130,7 @@ namespace restaurant
                 OnPropertyChanged("Discount");
             }
         }
+        [Key]
         public string Password
         {
             get { return password; }

@@ -27,15 +27,21 @@
         <ListBox x:Name="productList" ItemsSource="{Binding}" Grid.Column="0" Grid.RowSpan="3" Background="LightPink">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name}" FontSize="15"/>
-                        <TextBlock Text="{Binding Price}" FontSize="13"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Margin" Value="0,0,20,0"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="{Binding Name}" FontSize="20"  />
+                        <TextBlock Text="{Binding Price}" FontSize="15" />
+                        <TextBlock Text="₴" Margin="-10,0,0,0" FontSize="15"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button Grid.Column="2" Grid.Row="3" x:Name="Discount" Background="Wheat" Content="Discount" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="Button_Click13" />
+        <Button Grid.Column="2" Grid.Row="3" x:Name="Discount" Background="Wheat" Content="Discount" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="Discount_" />
 
         <Button Grid.Column="1" Grid.Row="0" x:Name="Black_Tea" Background="Plum" Content="Black Tea" FontFamily="Rod"  FontStyle="Italic"  FontSize="30" Click="Button_Click1" />
 
@@ -47,25 +53,26 @@
 
         <Button Grid.Column="1" Grid.Row="1" x:Name="Donut" Background="IndianRed" Content="Donut" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click5" />
 
-        <Button Grid.Column="2" Grid.Row="1"  x:Name="Croissant" Background="Violet" Content="Croissant" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click5" />
+        <Button Grid.Column="2" Grid.Row="1"  x:Name="Pancake" Background="Violet" Content="Pancake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click12" />
 
-        <Button Grid.Column="3" Grid.Row="1" x:Name="Swissroll" Background="PaleVioletRed" Content="Swissroll" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click6" />
+        <Button Grid.Column="3" Grid.Row="1" x:Name="Croissant" Background="PaleVioletRed" Content="Croissant" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click6" />
 
-        <Button Grid.Column="4" Grid.Row="1" x:Name="Apple_Pie" Background="pink" Content="Apple Pie" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click7" />
+        <Button Grid.Column="4" Grid.Row="1" x:Name="Swissroll" Background="pink" Content="Swissroll" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click7" />
 
-        <Button Grid.Column="1" Grid.Row="2" x:Name="Cheesecake" Background="DarkSalmon" Content="Cheesecake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click8" />
+        <Button Grid.Column="1" Grid.Row="2" x:Name="Apple_Pie" Background="DarkSalmon" Content="Apple Pie" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click8" />
 
-        <Button Grid.Column="2" Grid.Row="2" x:Name="Brownie" Background="LightCoral" Content="Brownie" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click9" />
+        <Button Grid.Column="2" Grid.Row="2" x:Name="Cheesecake" Background="LightCoral" Content="Cheesecake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click9" />
 
-        <Button Grid.Column="3" Grid.Row="2" x:Name="Cupcake" Background="plum" Content="Cupcake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click10" />
+        <Button Grid.Column="3" Grid.Row="2" x:Name="Brownie" Background="plum" Content="Brownie" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click10" />
 
-        <Button Grid.Column="4" Grid.Row="2" x:Name="Pancake" Background="darkSalmon" Content="Pancake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click11" />
+        <Button Grid.Column="4" Grid.Row="2" x:Name="Cupcake" Background="darkSalmon" Content="Cupcake" FontFamily="Rod" FontStyle="Italic" FontSize="30" Click="Button_Click11" />
 
         <Button Grid.Column="3" Grid.Row="3"  Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="PrintButton" Width="417" Height="95" Background="LightBlue" Content="Print" FontWeight="Bold" FontStyle="Italic" FontFamily="SimHei" FontSize="40" Click="PrintButton_Click" />
-
-        <Canvas Grid.ColumnSpan="2" Grid.Row="3" Background="#dfffff" Grid.RowSpan="2">
-            <TextBlock Text="Sum:" Canvas.Left="10" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="112" Canvas.Top="31"></TextBlock>
-            <TextBlock x:Name="TextBlock" Text="{Binding Sum.sum, Mode=OneWay,TargetNullValue=0 , UpdateSourceTrigger=PropertyChanged}" Canvas.Left="127" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="220" Canvas.Top="31"></TextBlock>
+        <Button Grid.Row="3" x:Name="DeleteTarget" FontFamily="Rod"  FontStyle="Italic" Height="95" Background="LightBlue" Content="Delete"  FontSize="40" Click="Del_Target" Grid.Column="1" />
+        <Canvas Grid.Row="3" Background="#dfffff">
+            <TextBlock Text="Sum:" Canvas.Left="10" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="112" Canvas.Top="21"></TextBlock>
+            <TextBlock x:Name="TextBlock" Text="{Binding Sum.sum, Mode=OneWay,TargetNullValue=0 , UpdateSourceTrigger=PropertyChanged}" Canvas.Left="127" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="107" Canvas.Top="21"></TextBlock>
+            <TextBlock Text="₴" Canvas.Left="266"  FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="28" Canvas.Top="21"></TextBlock>
         </Canvas>
 
     </Grid>

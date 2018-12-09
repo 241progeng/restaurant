@@ -79,6 +79,9 @@
     <Compile Include="About_us.xaml.cs">
       <DependentUpon>About_us.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminPass.xaml.cs">
+      <DependentUpon>AdminPass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EnterClient.xaml.cs">
       <DependentUpon>EnterClient.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <DependentUpon>theMainwindow.xaml</DependentUpon>
     </Compile>
     <Page Include="About_us.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminPass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
