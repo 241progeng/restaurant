@@ -72,7 +72,7 @@
         <Button Grid.Row="3" x:Name="DeleteTarget" FontFamily="Rod"  FontStyle="Italic" Height="95" Background="LightBlue" Content="Delete"  FontSize="40" Click="Del_Target" Grid.Column="1" />
         <Canvas Grid.Row="3" Background="#dfffff">
             <TextBlock Text="Sum:" Canvas.Left="10" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="112" Canvas.Top="21"></TextBlock>
-            <TextBlock x:Name="TextBlock" Text="{Binding Sum.sum, Mode=OneWay,TargetNullValue=0 , UpdateSourceTrigger=PropertyChanged}" Canvas.Left="127" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="107" Canvas.Top="21"></TextBlock>
+            <TextBlock x:Name="TextBlock" Text="{Binding Sum.sum, Mode=OneWay,TargetNullValue=0 , UpdateSourceTrigger=PropertyChanged}" Canvas.Left="127" FontWeight="Bold" FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="134" Canvas.Top="21"></TextBlock>
             <TextBlock Text="₴" Canvas.Left="266"  FontFamily="SimHei" FontSize="45" FontStyle="Italic" FontStretch="Expanded" Width="28" Canvas.Top="21"></TextBlock>
         </Canvas>
 

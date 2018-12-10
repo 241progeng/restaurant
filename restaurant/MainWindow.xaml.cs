@@ -86,6 +86,7 @@ namespace restaurant
                     client.Discount = clientWindow.Client.Discount;
                     client.Name = clientWindow.Client.Name;
                     client.Id = clientWindow.Client.Id;
+                    client.Password = clientWindow.Client.Password;
                     db.Entry(client).State = EntityState.Modified;
                     db.SaveChanges();
                 }
